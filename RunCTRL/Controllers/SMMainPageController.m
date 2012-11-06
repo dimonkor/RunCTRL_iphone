@@ -51,6 +51,7 @@
     [super viewDidAppear:animated];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     [self.locationManager startUpdatingLocation];
 }
 
