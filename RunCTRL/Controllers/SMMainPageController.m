@@ -97,7 +97,7 @@
     view.currentSpeed = [self convertSpeedForSpeedType:speed];
 }
 
--(void)compareCruiseSpeedAndCurrentSpeed{
+-(void)compareCruiseSpeedAndCurrentSpeed {
     CGFloat tmp = [self convertSpeedForSpeedType:self.lastSpeed] - [SMSharedClass sharedClass].cruiseSpeed;
     CGFloat margin = 3 / (![SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
     if (tmp < -margin){
@@ -111,21 +111,21 @@
     }
 }
 
--(void)updateSpeedForSpeedType{
+-(void)updateSpeedForSpeedType {
     SMMainPageView *view = (SMMainPageView *)self.view;
     view.currentSpeed = [self convertSpeedForSpeedType:self.lastSpeed];
     view.cruiseSpeed = [SMSharedClass sharedClass].cruiseSpeed;
 }
 
--(CGFloat)convertSpeedForSpeedType:(CGFloat)speed{
+-(CGFloat)convertSpeedForSpeedType:(CGFloat)speed {
     return (speed / 1000 * 3600) * ([SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
 }
 
--(void)gotoBuyNoAdsPage{
+-(void)gotoBuyNoAdsPage {
     [self.navigationController pushViewController:[[SMBuyNoAdsController alloc] init] animated:YES];
 }
 
--(void)tmpAction{
+-(void)tmpAction {
     [[SMSharedClass sharedClass] setIsRegistered:NO];
     [self.navigationController popViewControllerAnimated:YES];
 
