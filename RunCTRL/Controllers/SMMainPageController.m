@@ -69,13 +69,13 @@
     
 }
 
--(void)increaseCruiseSpeed{
+-(void)increaseCruiseSpeed {
     [SMSharedClass sharedClass].cruiseSpeed+=0.5;
     SMMainPageView *view = (SMMainPageView *)self.view;
     view.cruiseSpeed = [SMSharedClass sharedClass].cruiseSpeed;
 }
 
--(void)decreaseCruiseSpeed{
+-(void)decreaseCruiseSpeed {
     [SMSharedClass sharedClass].cruiseSpeed-=0.5;
     SMMainPageView *view = (SMMainPageView *)self.view;
     view.cruiseSpeed = [SMSharedClass sharedClass].cruiseSpeed;
