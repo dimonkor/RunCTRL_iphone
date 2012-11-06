@@ -97,7 +97,7 @@
     view.currentSpeed = [self convertSpeedForSpeedType:speed];
 }
 
--(void)compareCruiseSpeedAndCurrentSpeed {
+-(void)compareCruiseSpeedAndCurrentSpeed{
     CGFloat tmp = [self convertSpeedForSpeedType:self.lastSpeed] - [SMSharedClass sharedClass].cruiseSpeed;
     CGFloat margin = 3 / (![SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
     if (tmp < -margin){
