@@ -24,6 +24,7 @@
 @property(nonatomic, strong) UILabel *speedtype;
 @property(nonatomic, strong) UIButton *noAdsButton;
 @property(nonatomic, strong) UIView *adBannerView;
+@property(nonatomic) SMSpeedTextType currentSpeedType;
 
 
 @end
@@ -35,6 +36,7 @@
     if (self) {
 
         self.backgroundColor = [SMUtils getBackgroundColor];
+        self.currentSpeedType = SMSpeedTextNormal;
 
         //TODO: return
 //        [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"logoMainPage.png"] position:CGPointMake(120, 20.5)]];
@@ -54,7 +56,8 @@
         self.speedtype = speedType;
         [self addSubview:speedType];
 
-        self.speedText = [SMUtils createLabel:@"slow down" size:49 color:UIColorMake(174, 67, 67)];
+//        self.speedText = [SMUtils createLabel:@"slow down" size:49 color:UIColorMake(174, 67, 67)];
+        self.speedText = [SMUtils createLabel:@"normal" size:49 color:UIColorMake(153, 153, 153)];
         [self addSubview:self.speedText];
 
         [self addSettingsView];
@@ -64,6 +67,23 @@
     }
 
     return self;
+}
+
+-(void)changeSpeedText:(SMSpeedTextType)speedType{
+    if (self.currentSpeedType == speedType)
+        return;
+    self.currentSpeedType = speedType;
+    [self.speedText removeFromSuperview];
+    if (speedType == SMSpeedTextFaster){
+        self.speedText = [SMUtils createLabel:@"go faster" size:49 color:UIColorMake(66, 189, 72)];
+    }
+    else if (speedType == SMSpeedTextSlowDown) {
+        self.speedText = [SMUtils createLabel:@"slow down" size:49 color:UIColorMake(174, 67, 67)];
+    }
+    else{
+        self.speedText = [SMUtils createLabel:@"good speed" size:49 color:UIColorMake(153, 153, 153)];
+    }
+    [self addSubview:self.speedText];
 }
 
 -(void)addSettingsView {

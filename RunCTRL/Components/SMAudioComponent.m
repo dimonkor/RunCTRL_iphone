@@ -48,16 +48,13 @@
     if (mode==SMVibeModeSlower){
         [self startSlowerVibe];
         self.vibeMode = SMVibeModeSlower;
-        NSLog(@"Slower") ;
     }
     else if (mode == SMVibeModeFaster){
         [self startFasterVibe];
         self.vibeMode = SMVibeModeFaster;
-        NSLog(@"Faster") ;
     }
     else{
         self.vibeMode = SMVibeModeNormal;
-        NSLog(@"Normal") ;
     }
 }
 

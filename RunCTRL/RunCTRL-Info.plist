@@ -24,6 +24,11 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+        <string>audio</string>
+    </array>
     <key>UIAppFonts</key>
     <array>
         <string>Franchise-Bold.ttf</string>

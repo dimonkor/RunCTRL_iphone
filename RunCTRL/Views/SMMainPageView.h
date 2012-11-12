@@ -8,10 +8,19 @@
 #import <Foundation/Foundation.h>
 #import "SMViewDelegate.h"
 
+typedef enum {
+    SMSpeedTextSlowDown,
+    SMSpeedTextNormal,
+    SMSpeedTextFaster,
+} SMSpeedTextType;
+
 @interface SMMainPageView : UIView <SMViewDelegate>
 
 @property(nonatomic) CGFloat cruiseSpeed;
 
 @property(nonatomic) CGFloat currentSpeed;
+
+- (void)changeSpeedText:(SMSpeedTextType)speedType;
+
 
 @end
