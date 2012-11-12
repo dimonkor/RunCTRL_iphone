@@ -98,8 +98,10 @@
 }
 
 -(void)compareCruiseSpeedAndCurrentSpeed{
+//    CGFloat tmp = [self convertSpeedForSpeedType:self.lastSpeed] - [SMSharedClass sharedClass].cruiseSpeed;
+//    CGFloat margin = 3 / (![SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
     CGFloat tmp = [self convertSpeedForSpeedType:self.lastSpeed] - [SMSharedClass sharedClass].cruiseSpeed;
-    CGFloat margin = 3 / (![SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
+    CGFloat margin = 0.5 * ([SMSharedClass sharedClass].speedTypeIsMiles ?  0.621371 : 1.0);
     if (tmp < -margin){
         [[SMAudioComponent sharedComponent] changeMode:SMVibeModeFaster];
     }
