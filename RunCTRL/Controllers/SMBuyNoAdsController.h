@@ -10,6 +10,6 @@
 #import <StoreKit/StoreKit.h>
 
 
-@interface SMBuyNoAdsController : UIViewController <MFMailComposeViewControllerDelegate, SKProductsRequestDelegate>
+@interface SMBuyNoAdsController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @end

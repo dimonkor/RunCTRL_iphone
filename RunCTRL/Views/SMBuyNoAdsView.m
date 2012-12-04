@@ -12,6 +12,8 @@
 #import "SMAdsComponent.h"
 
 
+#define OFFSET 20
+
 @implementation SMBuyNoAdsView {
 
 }
@@ -21,11 +23,14 @@
     if (self) {
         self.backgroundColor = [SMUtils getBackgroundColor];
 
-        [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"buyNoAdsImage.png"] position:CGPointMake(0, 36)]];
+        [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"buyNoAdsImage.png"]
+                                             position:CGPointMake(0, OFFSET + 36)]];
 
-        [self addSubview:[SMUtils createButtonWithImage:[UIImage imageNamed:@"buyNoAdsBtn.png"] position:CGPointMake(64.5, 205) target:nil action:@selector(buyNoAds)]];
+        [self addSubview:[SMUtils createButtonWithImage:[UIImage imageNamed:@"buyNoAdsBtn.png"]
+                                               position:CGPointMake(64.5, OFFSET + 205) target:nil action:@selector(buyNoAds)]];
 
-        [self addSubview:[SMUtils createButtonWithImage:[UIImage imageNamed:@"getNoAdsFreeBtn.png"] position:CGPointMake(64.5, 322.5) target:nil action:@selector(sendEmail)]];
+        [self addSubview:[SMUtils createButtonWithImage:[UIImage imageNamed:@"getNoAdsFreeBtn.png"]
+                                               position:CGPointMake(64.5, OFFSET + 322.5) target:nil action:@selector(sendEmail)]];
 
         UIView *bannerView = [[SMAdsComponent sharedComponent] bannerForController:controller];
         bannerView.origin = CGPointMake(0, self.frame.size.height-50);

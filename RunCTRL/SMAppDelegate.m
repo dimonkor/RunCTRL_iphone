@@ -12,6 +12,7 @@
 #import "SMInstructionsController.h"
 #import "SMUtils.h"
 #import "UIViewAdditions.h"
+#import "MKStoreManager.h"
 
 @implementation SMAppDelegate
 

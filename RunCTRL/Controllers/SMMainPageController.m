@@ -40,7 +40,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [SMUtils updateViewForState:self];
 }
 
@@ -128,12 +128,6 @@
 
 -(void)gotoBuyNoAdsPage {
     [self.navigationController pushViewController:[[SMBuyNoAdsController alloc] init] animated:YES];
-}
-
--(void)tmpAction {
-    [[SMSharedClass sharedClass] setIsRegistered:NO];
-    [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 

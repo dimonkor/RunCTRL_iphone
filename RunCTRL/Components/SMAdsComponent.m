@@ -54,7 +54,7 @@
     bannerView.adUnitID = AD_MOB_ID;
     bannerView.rootViewController = pageController;
     GADRequest *request = [GADRequest request];
-    request.testing = YES;
+    //request.testing = YES;
     [bannerView loadRequest:request];
     self.bannerView = bannerView;
     return bannerView;
@@ -98,5 +98,22 @@
         }
     }
 }
+
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner {
+
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+
+}
+
 
 @end

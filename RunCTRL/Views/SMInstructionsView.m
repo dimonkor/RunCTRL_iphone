@@ -48,7 +48,7 @@
 }
 
 - (void)addInstructionsView {
-    [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"logoInstruction.png"] position:CGPointMake(91, 36)]];
+    [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"logoInstruction.png"] position:CGPointMake(0, 36)]];
     [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"instruction.png"] position:CGPointMake(0, 145)]];
 }
 

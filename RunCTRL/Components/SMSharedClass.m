@@ -9,6 +9,8 @@
 
 static NSString *const kIsRegisteredApp = @"isRegistered";
 
+static NSString *const kRegisteredEmails = @"rigisteredEmails";
+
 @implementation SMSharedClass {
 
 }
@@ -30,6 +32,31 @@ static NSString *const kIsRegisteredApp = @"isRegistered";
     }
 
     return self;
+}
+
+-(void)removeRegisteredEmails:(NSMutableArray *)emailsArray {
+    NSArray *registeredEmails = [self getRegisteredEmails];
+    [emailsArray removeObjectsInArray:registeredEmails];
+}
+
+- (NSArray *)getRegisteredEmails {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults synchronize];
+    NSArray *registeredEmails = [userDefaults arrayForKey:kRegisteredEmails];
+    return registeredEmails;
+}
+
+-(void)addEmailsToRegisteredEmails:(NSMutableArray *)array{
+    NSMutableArray *registeredEmails = [NSMutableArray arrayWithArray:[self getRegisteredEmails]];
+    [registeredEmails addObjectsFromArray:array];
+    [self setRegisteredEmails:registeredEmails];
+
+}
+
+- (void)setRegisteredEmails:(NSMutableArray *)array {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:array forKey:kRegisteredEmails];
+    [userDefaults synchronize];
 }
 
 -(void)changeSpeedType{

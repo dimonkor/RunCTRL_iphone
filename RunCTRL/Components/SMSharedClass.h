@@ -19,6 +19,11 @@
 
 + (SMSharedClass *)sharedClass;
 
+- (void)removeRegisteredEmails:(NSMutableArray *)emailsArray;
+
+- (void)addEmailsToRegisteredEmails:(NSMutableArray *)array;
+
+
 - (void)changeSpeedType;
 
 

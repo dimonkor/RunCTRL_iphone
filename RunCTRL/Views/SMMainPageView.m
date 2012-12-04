@@ -38,11 +38,7 @@
         self.backgroundColor = [SMUtils getBackgroundColor];
         self.currentSpeedType = SMSpeedTextNormal;
 
-        //TODO: return
-//        [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"logoMainPage.png"] position:CGPointMake(120, 20.5)]];
-        UIButton *button = [SMUtils createButtonWithImage:[UIImage imageNamed:@"logoMainPage.png"] position:CGPointMake(120, 20.5) target:nil action:@selector(tmpAction)];
-        [self addSubview:button];
-        // todo and
+        [self addSubview:[SMUtils createViewWithImage:[UIImage imageNamed:@"logoMainPage.png"] position:CGPointMake(0, 9.5)]];
 
         self.modSpeedLabel = [SMUtils createLabel:@"00" size:248 color:[UIColor whiteColor]];
         [self addSubview:self.modSpeedLabel];
