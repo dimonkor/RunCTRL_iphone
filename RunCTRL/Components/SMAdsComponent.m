@@ -55,6 +55,7 @@
     bannerView.rootViewController = pageController;
     GADRequest *request = [GADRequest request];
     //request.testing = YES;
+    bannerView.hidden = YES;
     [bannerView loadRequest:request];
     self.bannerView = bannerView;
     return bannerView;
@@ -62,15 +63,20 @@
 
 -(UIView *)getAdBannerView{
     ADBannerView *adBannerView = [[ADBannerView alloc] init];
-    adBannerView.delegate = self;
+
     adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObject:ADBannerContentSizeIdentifierPortrait];
 //    adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
     self.bannerView = adBannerView;
+    adBannerView.delegate = self;
+    adBannerView.hidden = YES;
     return adBannerView;
 }
 
+
+
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
     NSLog(error.description);
+    NSLog(@"working on error");
     [self workingOnError];
 }
 
@@ -86,34 +92,43 @@
         UIView *superView = self.bannerView.superview;
         if (superView){
             [self.bannerView removeFromSuperview];
-            CGPoint position = self.bannerView.origin;
-            self.bannerView = [self getAdModBanner:self.viewController];
-            self.bannerView.origin = position;
+            [self getAdMobInPosition];
             [superView addSubview:self.bannerView];
         }
         else{
-            CGPoint position = self.bannerView.origin;
-            self.bannerView = [self getAdModBanner:self.viewController];
-            self.bannerView.origin = position;
+            [self getAdMobInPosition];
         }
     }
 }
 
-- (void)bannerViewWillLoadAd:(ADBannerView *)banner {
-
+- (void)getAdMobInPosition {
+    CGPoint position = self.bannerView.origin;
+    self.bannerView = [self getAdModBanner:self.viewController];
+    self.bannerView.origin = position;
 }
 
+- (void)adViewDidReceiveAd:(GADBannerView *)view {
+    self.bannerView.hidden = NO;
+}
+
+
+//- (void)bannerViewWillLoadAd:(ADBannerView *)banner {
+//
+//}
+//
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-
+    self.bannerView.hidden = NO;
 }
+//
+//- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+//    return YES;
+//}
+//
+//- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+//
+//}
 
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    return YES;
-}
 
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-
-}
 
 
 @end

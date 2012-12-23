@@ -15,15 +15,15 @@
 
 - (UIView *)bannerForController:(UIViewController *)controller;
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
+//- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
 
-- (void)bannerViewWillLoadAd:(ADBannerView *)banner;
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner;
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave;
-
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner;
+//- (void)bannerViewWillLoadAd:(ADBannerView *)banner;
+//
+//- (void)bannerViewDidLoadAd:(ADBannerView *)banner;
+//
+//- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave;
+//
+//- (void)bannerViewActionDidFinish:(ADBannerView *)banner;
 
 
 @end

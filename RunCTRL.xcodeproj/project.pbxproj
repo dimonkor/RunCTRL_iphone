@@ -39,7 +39,6 @@
 		C55824247D9CC083F76448E0 /* SMAudioComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C5582419AE979741A4D5698C /* SMAudioComponent.m */; };
 		C5582499162A66CD8B6C371D /* SMMainPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55827BA1F782C3D3E705427 /* SMMainPageView.m */; };
 		C5582566F0855CF948EE8844 /* MKSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = C558291EBBFBDB5C1CACE462 /* MKSKProduct.m */; };
-		C558257B3C85C3F0CDF1BC72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5582FC3FE2B4BF4C0933CC4 /* StoreKit.framework */; };
 		C558260E29DA10B2EE709962 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5582F47745B61A1860EC547 /* SystemConfiguration.framework */; };
 		C5582663FF4344DF77BB01C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C558273D98EFA231103EE120 /* CoreLocation.framework */; };
 		C5582681A795690DC0047CEF /* logoInstruction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C55825C2ECC226E07A3F1C63 /* logoInstruction@2x.png */; };
@@ -195,7 +194,6 @@
 				C5582F34C39084EAAAAEEDCA /* StoreKit.framework in Frameworks */,
 				C558217E4E4B0B70D3A4A3AB /* AdSupport.framework in Frameworks */,
 				C5582FB61DD56EAD1E26E0A0 /* AddressBook.framework in Frameworks */,
-				C558257B3C85C3F0CDF1BC72 /* StoreKit.framework in Frameworks */,
 				C55821A8397917C46B9A67EE /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +470,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SM;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = eservicesbe;
 			};
 			buildConfigurationList = A209BCE7162E986600DB1603 /* Build configuration list for PBXProject "RunCTRL" */;
@@ -674,7 +672,8 @@
 		A209BD1B162E986600DB1603 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
 				EXCLUDED_SOURCE_FILE_NAMES = "";
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
@@ -688,7 +687,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_STYLE = "non-global";
@@ -702,8 +701,8 @@
 		A209BD1C162E986600DB1603 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Petru Teodorescu (X7Z3LP7658)";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
 				EXCLUDED_SOURCE_FILE_NAMES = "";
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
@@ -717,8 +716,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "58DCBB2D-908B-49E4-9921-A9CF5D7C22CA";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_STYLE = "non-global";
