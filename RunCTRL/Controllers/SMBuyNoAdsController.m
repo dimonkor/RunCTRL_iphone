@@ -82,8 +82,11 @@ static NSString *const productID = @"com.eservicesbe.RunCTRL.noads2";
     }
     self.emailsList = [NSArray arrayWithArray:emailsList];
     [mailController setToRecipients:self.emailsList];
-    [mailController setMessageBody:@"test message" isHTML:NO];
-    [mailController setSubject:@"test subject"];
+    [mailController setMessageBody:@"Hi,\n"
+            "\n"
+            "\n"
+            "Check out my new app for running http://goo.gl/G5iIS" isHTML:NO];
+    [mailController setSubject:@"Check out my new app for running"];
     CGRect frame = mailController.view.frame;
     frame = CGRectOffset(frame, 0, mailController.navigationBar.bottom);
     frame.size = CGSizeMake(frame.size.width, frame.size.height - mailController.navigationBar.bottom);
